@@ -1,0 +1,275 @@
+/* -------------------------------general things  */
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+:root
+{
+    --primary-color: #1c6868;
+    --text-dark: #171717;
+    --text-light: #737373;
+    --extra-light: #f4f6f5;
+    --white: #ffffff;
+    --max-width: 1200px;
+    --header-font: "Merriweather", serif;
+}
+html{
+    font-size: 14px;
+}
+body{
+    font-family:"Poppins", sans-serif;
+    scroll-behavior: smooth;
+}
+nav{
+    font-family: var(--header-font);
+    position: fixed;
+    max-width: var(--max-width);
+    width: 100%;
+   
+}
+.container{
+    max-width:var(--max-width);
+    margin: auto;
+    padding: 4rem 1rem;
+} 
+/*-------------------------------- general things  */
+
+/* start the nav bar in the phone  */
+body{height: 200vh;}
+.nav-logoButton{
+    position: relative;
+    z-index: 2;
+    padding: .6rem 1.5rem;
+    justify-content: space-between;
+    display: flex;
+    color: var(--white);
+    background-color: var(--primary-color);
+}
+.nav-logoButton .logo{
+    cursor: pointer;
+}
+.nav-logoButton .logo a{
+    color: var(--white);
+    text-decoration: none;
+    
+}
+.nav-menu-btn{
+    cursor: pointer;
+}
+.nav-menu-btn i{
+ }
+
+
+.nav-links{
+    gap: .5rem;
+    z-index: 1;
+    top: -124px;
+    position: absolute;
+    text-align: center;
+    background-color: var(--primary-color);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: .4s;
+}
+.nav-links.open{
+    top: 33px;
+}
+.nav-links li{
+    list-style: none;
+    cursor: pointer;
+    padding: .5rem 1rem;
+}
+
+.nav-links li:hover{
+background-color: #326969;
+}
+.nav-links li a{
+    text-decoration: none;
+    color: var(--white);
+}
+.nav-search {
+    display: none;
+}
+
+/* end of nav bar */
+/* start of the header section  */
+.header {
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+    font-weight: 600;
+    font-family: var(--header-font);
+    color: var(--primary-color);
+  }
+.header-section{
+    z-index: -1;
+    position: relative;
+    display: grid;
+    overflow: hidden;
+}
+.header-img{
+    margin-inline:auto;
+    grid-area: 1/1/2/2;
+}
+.header-img img{
+    width: 100%;
+    max-width: 900px;
+}
+.header-text{
+    grid-area: 1 / 1 / 2 / 2;
+    DISPLAY: flex;
+    align-items: center;
+}
+.header-text > div{
+    max-width: 500px;
+    padding:4rem 1rem;
+    background-color: rgba(255, 255, 255,.5);
+    backdrop-filter: blur(9px);
+}
+
+.header-text h1{
+font-family: var(--header-font);
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    text-transform: capitalize;
+    font-weight: bold;
+    font-size: 4rem;
+}
+
+.header-text p{
+font-size: 1.2rem;
+color: var(--text-light);
+}
+/* end of the header section  */
+/* start the deals section  */
+.deals {
+    
+}
+.deals.container{
+display: flex;
+justify-content: space-between;
+align-items: center;
+flex-wrap: wrap;
+}
+.deals-card{
+    cursor: pointer;
+    border-radius: .5rem;
+    padding: 1rem;
+    text-transform: capitalize;
+    margin-bottom: 3rem;
+    flex-basis: 100%;
+    transition: .1s;
+}
+.deals-card:not(:first-child):hover{
+    background-color: var(--extra-light);
+}
+.deals-card span{
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    display: block;
+    width: fit-content;
+}
+.deals-card h4{
+    font-size: 1.5rem;
+    margin-bottom: .5rem;
+}
+.deals-card p{
+    font-size: 1.2rem;
+    color: var(--text-light);
+
+}
+/* end the deals section  */
+/* start about-us */
+
+/* end about-us */
+@media (width>584px) {
+    .deals-card{
+        flex-basis: 47%;
+        }
+}
+@media (width > 768px) {
+    html{
+        font-size: 16px;
+    }
+    nav{
+        position: relative;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        padding: 1rem;
+    }
+    .nav-logoButton .logo a {
+        font-weight: bold;
+        font-size: 1.2rem;
+        color:var(--primary-color)
+    }
+    .nav-logoButton{
+        background-color: transparent;
+    }
+    .nav-logoButton .nav-menu-btn{
+        display: none;
+    }
+    .nav-links{
+        flex-direction: row;
+        top: 0;
+        width: fit-content;
+        position: relative;
+        background-color: transparent;
+    }
+    .nav-links li a{
+        color: var(--text-dark);
+    }
+    .nav-links li:hover{
+        background-color: transparent;
+    }
+    .nav-links li:hover a{
+color: var(--text-light);
+    }
+
+    .nav-search {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;    
+    }
+    .nav-search input{
+        padding: .3rem 1rem;
+        width: 0;
+        border: none;
+        outline: none;
+        transition: .3s;
+    }
+    .nav-search input.open{
+        border: 1px solid var(--primary-color);
+        width: 100%;
+    }
+    .nav-search span{
+        cursor: pointer;
+        margin-left: 1rem;
+    }
+    /* end nav */
+    /* header  */
+    .header-section{
+        padding-top: 0;
+    }
+    /* end header  */
+    /* start deal  */
+    .deals-card{
+        flex-basis: 32%;
+        text-align: center;
+        } 
+        .deals-card:first-child{
+            flex-basis: 100%;
+        }
+        .deals-card span{
+            margin-inline: auto;
+
+        }
+    /* end deal  */
+    
+}
+
+
+/* start the nav bar in the phone  */
+
