@@ -22,6 +22,7 @@ body{
     scroll-behavior: smooth;
 }
 nav{
+    z-index: 2;
     font-family: var(--header-font);
     position: fixed;
     max-width: var(--max-width);
@@ -57,8 +58,7 @@ body{height: 200vh;}
 .nav-menu-btn{
     cursor: pointer;
 }
-.nav-menu-btn i{
- }
+
 
 
 .nav-links{
@@ -96,8 +96,9 @@ background-color: #326969;
 /* end of nav bar */
 /* start of the header section  */
 .header {
+    text-transform: capitalize;
     margin-bottom: 1rem;
-    font-size: 2.5rem;
+    font-size: 3rem;
     font-weight: 600;
     font-family: var(--header-font);
     color: var(--primary-color);
@@ -147,6 +148,8 @@ color: var(--text-light);
     
 }
 .deals.container{
+    z-index: -1;
+    position: relative;
 display: flex;
 justify-content: space-between;
 align-items: center;
@@ -182,11 +185,203 @@ flex-wrap: wrap;
 }
 /* end the deals section  */
 /* start about-us */
+.about-us{
 
+}
+.about-us-learn-more{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+.about-us-learn-more .text{
+    padding: .5rem;
+    flex-basis: 100%;
+}
+.about-us-learn-more .text p{
+    font-size: 1.2rem;
+    color: var(--text-light);
+    margin-bottom: 1rem;
+
+}
+.about-us-learn-more button{
+    border-radius: .3rem;
+    margin-left: 1rem;
+    text-transform: capitalize;
+    padding: .7rem;
+    border: none;
+    color: white;
+    background-color: var(--primary-color);
+}
+.about-us-learn-more button:hover{
+    cursor: pointer;
+    background-color: #014545;
+}
+.about-us-info{
+    display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+}
+.about-us-info .text{
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    display: flex;
+    flex-basis: 100%;
+    margin-top: 3rem;
+    order: 2;
+
+}
+.about-us-info .text .card{
+    margin-bottom: 1rem;
+    flex-basis: 100%;
+}
+
+.about-us-info .text .card h3 {
+    font-size: 1.5rem;
+    margin-bottom: .6rem;
+    text-transform: capitalize;
+    color: var(--primary-color);
+}
+.about-us-info .text .card p {
+    font-size: 1.2rem;
+    color: var(--text-light);
+    margin-bottom: 1rem;
+}
+.about-us-info .image img{
+    max-width: 100%;
+}
 /* end about-us */
+/* start products  */
+.products{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.products h2{
+    width: 100%;
+}
+.product {
+    flex-basis: 100%;
+    padding: 1.5rem 1rem;
+    margin-bottom: 2.5rem;
+    position: relative;
+    cursor: pointer;
+}
+.product::after{
+    z-index: -1;
+    top: 0;
+    right: 0;
+    position: absolute;
+    content: "";
+    background-color: #eee;
+    width: 100%;
+    height: 66%;
+    transition: .5s;
+}
+.product:hover::after{
+    height: 100%;
+
+}
+.product .text{}
+.product .text h3{
+    font-size: 1.2rem;
+    text-transform: capitalize;
+    margin-bottom: 0.2rem;
+    font-weight: 500;
+}
+.product .text p{
+    color: var(--text-light);
+}
+.product .img{
+    text-align: center;
+}
+.product .img img{
+    max-width: 90%;
+}
+
+/* end products  */
+/* start client  */
+.client{
+    position: relative;
+    background-color: var(--extra-light);
+}
+.client-content{
+    text-align: center;
+    width: 65%;
+    margin-inline: auto;
+    margin-bottom: 2rem;
+}
+.client-content p{
+    font-size: 1.2rem;
+    color: var(--text-light);
+}
+.client-arrow{
+    color: var(--text-dark);
+    position: absolute;
+    font-size: 4rem;
+}
+.client-arrow.left{
+left: 10%;
+}
+.client-arrow.right{
+right: 10%;
+}
+.client-swipe-area{
+    margin-inline: auto;
+    width: 60%;
+    position: relative;
+}
+.client-card{
+
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+    flex-wrap: wrap;
+    /* position: absolute; */
+}
+.client-card .img{
+    flex-basis: 32%;
+}
+.client-card .img img {
+    max-width: 100%;
+}
+.client-card .text{
+flex-basis: 60%;
+}
+.client-card .text p{
+    word-spacing: 5px;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+    font-size: 1.2rem;
+    color: var(--text-light);
+}
+.client-card .text h4{
+    margin-bottom: .3rem;
+    font-weight: 500;
+    font-size: 1.5rem;
+}
+
+.client-card .text h5{
+    color: var(--text-light);
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+
+/* end client  */
 @media (width>584px) {
     .deals-card{
         flex-basis: 47%;
+        }
+        /* about  */
+        .about-us-info .text .card{
+text-align: center;
+        }
+        /* product  */
+        .product{
+            flex-basis: 48%;
         }
 }
 @media (width > 768px) {
@@ -267,6 +462,34 @@ color: var(--text-light);
 
         }
     /* end deal  */
+    /* start about-us  */
+    .about-us-learn-more{
+        
+        justify-content: space-between;
+    }
+    .about-us-learn-more .text{
+        flex-basis: 50%;
+    }
+    
+    
+.about-us-info .text {
+    order: 1;
+    flex-basis: 48%;
+}
+.about-us-info .image{
+    order: 2;
+    flex-basis: 50%;
+}
+.about-us-info .text .card{
+  text-align: start;  
+flex-basis: 50%;
+}
+    /* end about-us  */
+       /* product  */
+       .product{
+        flex-basis: 32%;
+    }
+    /* end product  */
     
 }
 

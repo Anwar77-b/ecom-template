@@ -58,8 +58,20 @@ ScrollReveal().reveal(".header-text p", {
     ScrollReveal().reveal(card,{
       distance:"70px",
       origin:"right",
-      duration:(i+2)*500
+      delay:(i)*400
 
     })
   }
   )
+  // start about us 
+let aboutUSs=document.querySelectorAll(".about-us-info .text .card");
+aboutUSs.forEach((note,i)=>{
+  ScrollReveal().reveal(note,{
+    duration:1000,
+    interval:500,
+    delay:i*300,
+  
+  })
+}
+)
+  // end about us 
