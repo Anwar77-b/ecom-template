@@ -75,3 +75,46 @@ aboutUSs.forEach((note,i)=>{
 }
 )
   // end about us 
+  // start client swipe 
+  const clients =document.querySelectorAll(".client-card");
+  let cIdnex=0;
+let arrowRight=document.querySelector(".client-arrow.right");
+arrowRight.addEventListener("click",(e)=>{
+  if (cIdnex!=2) {
+    cIdnex++;
+  }else cIdnex=0;
+  clients.forEach(client=>{
+    client.classList.remove("active");
+    clients[cIdnex].classList.add("active");
+  }
+  )
+});
+
+let arrowLeft=document.querySelector(".client-arrow.left");
+arrowLeft.addEventListener("click",(e)=>{
+  if (cIdnex!=0) {
+    cIdnex--;
+  }else cIdnex=2;
+  clients.forEach(client=>{
+    client.classList.remove("active");
+    clients[cIdnex].classList.add("active");
+  }
+  )
+});
+  // end client swipe 
+  
+  // the list scroll section 
+  let sectionLis=document.querySelectorAll(".nav-links li a");
+  
+  sectionLis.forEach(element=>{
+    
+    element.addEventListener("click",e=>{
+      // in case of links 
+      e.preventDefault();
+      // Element.scrollINtoView 
+      document.querySelector(e.currentTarget.dataset.section).scrollIntoView({
+        behavior:'smooth'
+      })
+    })
+  })
+  //end the list scroll section 
